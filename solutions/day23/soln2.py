@@ -5,10 +5,9 @@ def read_edges(filename: str) -> list[list[str]]:
             u, v = line.strip().split("-")
             edges.append([u, v])
         return edges
-    raise Exception(f"Failed to read {filename}")
 
 
-def find_maximal_clique(matrix: list[list[int]],
+def find_maximal_clique(matrix: list[list[bool]],
                         id_map: dict[str, int]) -> list[str]:
     """Brute-force searches a maximal clique in a graph and returns the result."""
     nodes = list(id_map.keys())

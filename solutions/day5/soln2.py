@@ -1,4 +1,4 @@
-def read_input(filename: str) -> tuple[list[int], list[int]]:
+def read_input(filename: str) -> tuple[list[list[int]], list[list[int]]]:
     with open(filename, "r") as file:
         ordering_rules = []
         for line in file:
@@ -12,8 +12,6 @@ def read_input(filename: str) -> tuple[list[int], list[int]]:
             updates.append([int(num) for num in line.split(",")])
 
         return ordering_rules, updates
-
-    raise Exception(f"Failed to read {filename}")
 
 
 def is_valid_update(update: list[int],
